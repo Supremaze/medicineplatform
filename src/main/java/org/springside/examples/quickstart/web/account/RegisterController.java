@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springside.examples.quickstart.entity.Member;
 import org.springside.examples.quickstart.entity.User;
 import org.springside.examples.quickstart.service.account.AccountService;
 
@@ -34,9 +35,9 @@ public class RegisterController {
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	public String register(@Valid User user, RedirectAttributes redirectAttributes) {
-		accountService.registerUser(user);
-		redirectAttributes.addFlashAttribute("username", user.getLoginName());
+	public String register(@Valid Member user, RedirectAttributes redirectAttributes) {
+		accountService.registerMember(user);
+		redirectAttributes.addFlashAttribute("username", user.getUsername());
 		return "redirect:/login";
 	}
 
@@ -46,7 +47,7 @@ public class RegisterController {
 	@RequestMapping(value = "checkLoginName")
 	@ResponseBody
 	public String checkLoginName(@RequestParam("loginName") String loginName) {
-		if (accountService.findUserByLoginName(loginName) == null) {
+		if (accountService.findMemberByUserName(loginName) == null) {
 			return "true";
 		} else {
 			return "false";

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springside.examples.quickstart.entity.Member;
 import org.springside.examples.quickstart.entity.User;
 import org.springside.examples.quickstart.service.account.AccountService;
 import org.springside.examples.quickstart.service.account.ShiroDbRealm.ShiroUser;
@@ -33,14 +34,14 @@ public class ProfileController {
 	@RequestMapping(method = RequestMethod.GET)
 	public String updateForm(Model model) {
 		Long id = getCurrentUserId();
-		model.addAttribute("user", accountService.getUser(id));
+		model.addAttribute("user", accountService.getMember(id));
 		return "account/profile";
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	public String update(@Valid @ModelAttribute("user") User user) {
+	public String update(@Valid @ModelAttribute("member") Member user) {
 		accountService.updateUser(user);
-		updateCurrentUserName(user.getName());
+		updateCurrentUserName(user.getUsername());
 		return "redirect:/";
 	}
 
@@ -51,7 +52,7 @@ public class ProfileController {
 	@ModelAttribute
 	public void getUser(@RequestParam(value = "id", defaultValue = "-1") Long id, Model model) {
 		if (id != -1) {
-			model.addAttribute("user", accountService.getUser(id));
+			model.addAttribute("user", accountService.getMember(id));
 		}
 	}
 

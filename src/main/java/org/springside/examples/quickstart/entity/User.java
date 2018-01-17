@@ -21,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.google.common.collect.ImmutableList;
 
 @Entity
-@Table(name = "member")
+@Table(name = "ss_user")
 public class User extends IdEntity {
 	private String loginName;
 	private String name;

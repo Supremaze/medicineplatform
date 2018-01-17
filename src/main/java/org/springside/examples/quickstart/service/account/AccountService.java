@@ -14,7 +14,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
+import org.springside.examples.quickstart.entity.Member;
 import org.springside.examples.quickstart.entity.User;
+import org.springside.examples.quickstart.repository.MemberDao;
 import org.springside.examples.quickstart.repository.TaskDao;
 import org.springside.examples.quickstart.repository.UserDao;
 import org.springside.examples.quickstart.service.ServiceException;
@@ -38,35 +40,36 @@ public class AccountService {
 
 	private static Logger logger = LoggerFactory.getLogger(AccountService.class);
 
-	private UserDao userDao;
+	//private UserDao userDao;
+	private MemberDao memberDao;
 	private TaskDao taskDao;
 	private Clock clock = Clock.DEFAULT;
 
-	public List<User> getAllUser() {
-		return (List<User>) userDao.findAll();
+	public List<Member> getAllUser() {
+		return (List<Member>) memberDao.findAll();
 	}
 
-	public User getUser(Long id) {
-		return userDao.findOne(id);
+	public Member getMember(Long id) {
+		return memberDao.findOne(id);
 	}
 
-	public User findUserByLoginName(String loginName) {
-		return userDao.findByLoginName(loginName);
+	public Member findMemberByUserName(String userName) {
+		return memberDao.findByUsername(userName);
 	}
 
-	public void registerUser(User user) {
-		entryptPassword(user);
-		user.setRoles("user");
-		user.setRegisterDate(clock.getCurrentDate());
+	public void registerMember(Member mem) {
+		entryptPassword(mem);
+		mem.setRoles("user");
+		mem.setRegisterDate(clock.getCurrentDate());
 
-		userDao.save(user);
+		memberDao.save(mem);
 	}
 
-	public void updateUser(User user) {
+	public void updateUser(Member user) {
 		if (StringUtils.isNotBlank(user.getPlainPassword())) {
 			entryptPassword(user);
 		}
-		userDao.save(user);
+		memberDao.save(user);
 	}
 
 	public void deleteUser(Long id) {
@@ -74,7 +77,7 @@ public class AccountService {
 			logger.warn("操作员{}尝试删除超级管理员用户", getCurrentUserName());
 			throw new ServiceException("不能删除超级管理员用户");
 		}
-		userDao.delete(id);
+		memberDao.delete(id);
 		taskDao.deleteByUserId(id);
 
 	}
@@ -97,7 +100,7 @@ public class AccountService {
 	/**
 	 * 设定安全的密码，生成随机的salt并经过1024次 sha-1 hash
 	 */
-	private void entryptPassword(User user) {
+	private void entryptPassword(Member user) {
 		byte[] salt = Digests.generateSalt(SALT_SIZE);
 		user.setSalt(Encodes.encodeHex(salt));
 
@@ -106,8 +109,8 @@ public class AccountService {
 	}
 
 	@Autowired
-	public void setUserDao(UserDao userDao) {
-		this.userDao = userDao;
+	public void setMemberDao(MemberDao memDao) {
+		this.memberDao = memDao;
 	}
 
 	@Autowired

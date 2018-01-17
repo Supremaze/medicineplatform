@@ -146,55 +146,6 @@
 					</ul></li>
 
 			</shiro:hasRole>
-			<shiro:hasRole name="doctor">
-				<li><a href="${ctx}/user" onClick="getclassname(this)"> <i
-						class="icon-medkit"></i>&nbsp;&nbsp;健康信息
-				</a></li>
-				<li><a href="${ctx}/handin" onClick="getclassname(this)"> <i
-						class="icon-edit"></i>&nbsp;&nbsp;手动录入
-				</a></li>
-				<li><a href="${ctx}/friend" onClick="getclassname(this)"> <i
-						class="icon-group"></i>&nbsp;&nbsp;我的亲友
-				</a></li>
-				<li><a href="${ctx}/doctorQuery/userQueryList"
-					onClick="getclassname(this)"> <i class="icon-group"></i>&nbsp;&nbsp;我的提问
-				</a></li>
-
-				<li><a href="${ctx}/contact" onClick="getclassname(this)">
-						<i class="icon-group"></i>&nbsp;&nbsp;收货地址
-				</a></li>
-				<li><a href="#myOrder" class="menu-first collapse"
-					data-toggle="collapse"> <i class="icon-user"></i>&nbsp;&nbsp;我的订单
-						<i class="icon-chevron-down" style="float: right;"></i>
-				</a>
-					<ul id="myOrder" class="menu-second collapse sub-menu">
-						<li><a href="${ctx}/dietOrder" class="sub-menu-list"><i
-								class="icon-food"></i>&nbsp;&nbsp;膳食订单</a></li>
-						<li><a href="${ctx}/serviceOrder" class="sub-menu-list"><i
-								class="icon-home"></i>&nbsp;&nbsp;服务订单</a></li>
-					</ul></li>
-				<li><a href="#myShopping" class="menu-first collapse"
-					data-toggle="collapse"> <i class="icon-user"></i>&nbsp;&nbsp;服务膳食
-						<i class="icon-chevron-down" style="float: right;"></i>
-				</a>
-					<ul id="myShopping" class="menu-second collapse sub-menu">
-						<li><a href="${ctx}/diet" class="sub-menu-list"><i
-								class="icon-food"></i>&nbsp;&nbsp;营养配膳</a></li>
-						<li><a href="${ctx}/service" class="sub-menu-list"><i
-								class="icon-home"></i>&nbsp;&nbsp;至家服务</a></li>
-					</ul></li>
-				<li><a href="#myCart" class="menu-first collapse"
-					data-toggle="collapse"> <i class="icon-user"></i>&nbsp;&nbsp;购物车
-						<i class="icon-chevron-down" style="float: right;"></i>
-				</a>
-					<ul id="myCart" class="menu-second collapse sub-menu">
-						<li><a href="${ctx}/dietCart" class="sub-menu-list"><i
-								class="icon-food"></i>&nbsp;&nbsp;营养配膳<b class="cart-count">${dietcount}</b></a></li>
-						<li><a href="${ctx}/serviceCart" class="sub-menu-list"><i
-								class="icon-home"></i>&nbsp;&nbsp;至家服务<b class="cart-count">${servicecount}</b></a></li>
-					</ul></li>
-
-			</shiro:hasRole>
 
 
 			

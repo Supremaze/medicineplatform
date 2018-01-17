@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springside.examples.quickstart.entity.Member;
 import org.springside.examples.quickstart.entity.User;
 import org.springside.examples.quickstart.service.account.AccountService;
 
@@ -34,7 +35,7 @@ public class UserAdminController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String list(Model model) {
-		List<User> users = accountService.getAllUser();
+		List<Member> users = accountService.getAllUser();
 		model.addAttribute("users", users);
 
 		return "account/adminUserList";
@@ -42,22 +43,22 @@ public class UserAdminController {
 
 	@RequestMapping(value = "update/{id}", method = RequestMethod.GET)
 	public String updateForm(@PathVariable("id") Long id, Model model) {
-		model.addAttribute("user", accountService.getUser(id));
+		model.addAttribute("user", accountService.getMember(id));
 		return "account/adminUserForm";
 	}
 
 	@RequestMapping(value = "update", method = RequestMethod.POST)
-	public String update(@Valid @ModelAttribute("user") User user, RedirectAttributes redirectAttributes) {
+	public String update(@Valid @ModelAttribute("user") Member user, RedirectAttributes redirectAttributes) {
 		accountService.updateUser(user);
-		redirectAttributes.addFlashAttribute("message", "更新用户" + user.getLoginName() + "成功");
+		redirectAttributes.addFlashAttribute("message", "更新用户" + user.getUsername() + "成功");
 		return "redirect:/admin/user";
 	}
 
 	@RequestMapping(value = "delete/{id}")
 	public String delete(@PathVariable("id") Long id, RedirectAttributes redirectAttributes) {
-		User user = accountService.getUser(id);
+		Member user = accountService.getMember(id);
 		accountService.deleteUser(id);
-		redirectAttributes.addFlashAttribute("message", "删除用户" + user.getLoginName() + "成功");
+		redirectAttributes.addFlashAttribute("message", "删除用户" + user.getUsername() + "成功");
 		return "redirect:/admin/user";
 	}
 
@@ -68,7 +69,7 @@ public class UserAdminController {
 	@ModelAttribute
 	public void getUser(@RequestParam(value = "id", defaultValue = "-1") Long id, Model model) {
 		if (id != -1) {
-			model.addAttribute("user", accountService.getUser(id));
+			model.addAttribute("user", accountService.getMember(id));
 		}
 	}
 }

@@ -20,6 +20,7 @@ import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
+import org.springside.examples.quickstart.entity.Member;
 import org.springside.examples.quickstart.entity.User;
 import org.springside.modules.utils.Encodes;
 
@@ -35,10 +36,10 @@ public class ShiroDbRealm extends AuthorizingRealm {
 	@Override
 	protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authcToken) throws AuthenticationException {
 		UsernamePasswordToken token = (UsernamePasswordToken) authcToken;
-		User user = accountService.findUserByLoginName(token.getUsername());
+		Member user = accountService.findMemberByUserName(token.getUsername());
 		if (user != null) {
 			byte[] salt = Encodes.decodeHex(user.getSalt());
-			return new SimpleAuthenticationInfo(new ShiroUser(user.getId(), user.getLoginName(), user.getName()),
+			return new SimpleAuthenticationInfo(new ShiroUser(user.getId(), user.getUsername(), user.getRealname()),
 					user.getPassword(), ByteSource.Util.bytes(salt), getName());
 		} else {
 			return null;
@@ -51,7 +52,7 @@ public class ShiroDbRealm extends AuthorizingRealm {
 	@Override
 	protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
 		ShiroUser shiroUser = (ShiroUser) principals.getPrimaryPrincipal();
-		User user = accountService.findUserByLoginName(shiroUser.loginName);
+		Member user = accountService.findMemberByUserName(shiroUser.loginName);
 		SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
 		info.addRoles(user.getRoleList());
 		return info;
