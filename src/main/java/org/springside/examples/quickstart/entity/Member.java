@@ -20,9 +20,9 @@ public class Member extends IdEntity {
 	private String username;
 	private String realname;
 	private String password;
-	//admin,user,doctor
+	// admin,user,doctor
 	private String roles;
-	//男，女
+	// 男，女
 	private String sex;
 	private String avatar;
 	private Date regtime;
@@ -33,79 +33,91 @@ public class Member extends IdEntity {
 	private String phone;
 	private String sfz;
 	private String danwei;
-	//0：未审核，1：未通过，2：已通过
+	// 0：未审核，1：未通过，2：已通过
 	private int status;
-	private String doctorCer;
-	//是否被审核（医生）
+	// private String doctorcer;
+	// 是否被审核（医生）
 	private int ifcheck;
-	//审核客服的id
+	// 审核客服的id
 	private int kefuid;
-	//擅长病种，1：呼吸；2：自闭症；
+	// 擅长病种，1：呼吸；2：自闭症；
 	private int bingzhong;
 	private String salt;
 	private String plainPassword;
 	private int price;
-	public Member(String username, String realname, String password, String roles, String sex, String avatar,
-			Date regtime, int endtime, String birthday, String intro, String address, String phone, String sfz,
-			String danwei, int status, String doctorCer, int ifcheck, int kefuid, int bingzhong, String salt,
-			String plainPassword) {
-		super();
-		this.username = username;
-		this.realname = realname;
-		this.password = password;
-		this.roles = roles;
-		this.sex = sex;
-		this.avatar = avatar;
-		this.regtime = regtime;
-		this.endtime = endtime;
-		this.birthday = birthday;
-		this.intro = intro;
-		this.address = address;
-		this.phone = phone;
-		this.sfz = sfz;
-		this.danwei = danwei;
-		this.status = status;
-		this.doctorCer = doctorCer;
-		this.ifcheck = ifcheck;
-		this.kefuid = kefuid;
-		this.bingzhong = bingzhong;
-		this.salt = salt;
-		this.plainPassword = plainPassword;
-	}
+
+
 	public Member() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public String getUsername() {
-		return username;
+
+	public String getAddress() {
+		return address;
 	}
-	public void setUsername(String username) {
-		this.username = username;
+
+	public String getAvatar() {
+		return avatar;
 	}
-	public String getRealname() {
-		return realname;
+
+	public int getBingzhong() {
+		return bingzhong;
 	}
-	public void setRealname(String realname) {
-		this.realname = realname;
+
+	public String getBirthday() {
+		return birthday;
 	}
+
+	public String getDanwei() {
+		return danwei;
+	}
+
+	public int getEndtime() {
+		return endtime;
+	}
+
+	// public String getDoctorCer() {
+	// return doctorcer;
+	// }
+	// public void setDoctorCer(String doctorcer) {
+	// this.doctorcer = doctorcer;
+	// }
+	public int getIfcheck() {
+		return ifcheck;
+	}
+
+	public String getIntro() {
+		return intro;
+	}
+
+	public int getKefuid() {
+		return kefuid;
+	}
+
 	public String getPassword() {
 		return password;
 	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	public String getRoles() {
-		return roles;
-	}
-	public void setRoles(String roles) {
-		this.roles = roles;
+
+	public String getPhone() {
+		return phone;
 	}
 	
+	// 不持久化到数据库，也不显示在Restful接口的属性.
 	@Transient
 	@JsonIgnore
-	public List<String> getRoleList() {
-		// 角色列表在数据库中实际以逗号分隔字符串存储，因此返回不能修改的List.
-		return ImmutableList.copyOf(StringUtils.split(roles, ","));
+	public String getPlainPassword() {
+		return plainPassword;
+	}
+	public void setPlainPassword(String plainPassword) {
+		this.plainPassword = plainPassword;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public String getRealname() {
+		return realname;
 	}
 
 	// 设定JSON序列化时的日期格式
@@ -113,109 +125,124 @@ public class Member extends IdEntity {
 	public Date getRegtime() {
 		return regtime;
 	}
-	public String getSex() {
-		return sex;
+
+	@Transient
+	@JsonIgnore
+	public List<String> getRoleList() {
+		// 角色列表在数据库中实际以逗号分隔字符串存储，因此返回不能修改的List.
+		return ImmutableList.copyOf(StringUtils.split(roles, ","));
 	}
-	public void setSex(String sex) {
-		this.sex = sex;
+
+	public String getRoles() {
+		return roles;
 	}
-	public String getAvatar() {
-		return avatar;
-	}
-	public void setAvatar(String avatar) {
-		this.avatar = avatar;
-	}
-	public void setRegtime(Date regtime) {
-		this.regtime = regtime;
-	}
-	public int getEndtime() {
-		return endtime;
-	}
-	public void setEndtime(int endtime) {
-		this.endtime = endtime;
-	}
-	public String getBirthday() {
-		return birthday;
-	}
-	public void setBirthday(String birthday) {
-		this.birthday = birthday;
-	}
-	public String getIntro() {
-		return intro;
-	}
-	public void setIntro(String intro) {
-		this.intro = intro;
-	}
-	public String getAddress() {
-		return address;
-	}
-	public void setAddress(String address) {
-		this.address = address;
-	}
-	public String getPhone() {
-		return phone;
-	}
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
-	public String getSfz() {
-		return sfz;
-	}
-	public void setSfz(String sfz) {
-		this.sfz = sfz;
-	}
-	public String getDanwei() {
-		return danwei;
-	}
-	public void setDanwei(String danwei) {
-		this.danwei = danwei;
-	}
-	public int getStatus() {
-		return status;
-	}
-	public void setStatus(int status) {
-		this.status = status;
-	}
-	public String getDoctorCer() {
-		return doctorCer;
-	}
-	public void setDoctorCer(String doctorCer) {
-		this.doctorCer = doctorCer;
-	}
-	public int getIfcheck() {
-		return ifcheck;
-	}
-	public void setIfcheck(int ifcheck) {
-		this.ifcheck = ifcheck;
-	}
-	public int getKefuid() {
-		return kefuid;
-	}
-	public void setKefuid(int kefuid) {
-		this.kefuid = kefuid;
-	}
-	public int getBingzhong() {
-		return bingzhong;
-	}
-	public void setBingzhong(int bingzhong) {
-		this.bingzhong = bingzhong;
-	}
+
 	public String getSalt() {
 		return salt;
 	}
+
+	public String getSex() {
+		return sex;
+	}
+
+	public String getSfz() {
+		return sfz;
+	}
+
+	public int getStatus() {
+		return status;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public void setAvatar(String avatar) {
+		this.avatar = avatar;
+	}
+
+	public void setBingzhong(int bingzhong) {
+		this.bingzhong = bingzhong;
+	}
+
+	public void setBirthday(String birthday) {
+		this.birthday = birthday;
+	}
+
+	public void setDanwei(String danwei) {
+		this.danwei = danwei;
+	}
+
+	public void setEndtime(int endtime) {
+		this.endtime = endtime;
+	}
+
+	public void setIfcheck(int ifcheck) {
+		this.ifcheck = ifcheck;
+	}
+
+	public void setIntro(String intro) {
+		this.intro = intro;
+	}
+
+	public void setKefuid(int kefuid) {
+		this.kefuid = kefuid;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+	public void setRealname(String realname) {
+		this.realname = realname;
+	}
+
+	public void setRegisterDate(Date currentDate) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void setRegtime(Date regtime) {
+		this.regtime = regtime;
+	}
+
+	public void setRoles(String roles) {
+		this.roles = roles;
+	}
+
 	public void setSalt(String salt) {
 		this.salt = salt;
 	}
-	public String getPlainPassword() {
-		return plainPassword;
+
+	public void setSex(String sex) {
+		this.sex = sex;
 	}
-	public void setPlainPassword(String plainPassword) {
-		this.plainPassword = plainPassword;
+
+	public void setSfz(String sfz) {
+		this.sfz = sfz;
 	}
-	public void setRegisterDate(Date currentDate) {
-		// TODO Auto-generated method stub
-		
+
+	public void setStatus(int status) {
+		this.status = status;
 	}
-	
-	
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+
 }
