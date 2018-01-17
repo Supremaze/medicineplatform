@@ -46,8 +46,9 @@ public class RegisterController {
 	 */
 	@RequestMapping(value = "checkLoginName")
 	@ResponseBody
-	public String checkLoginName(@RequestParam("loginName") String loginName) {
+	public String checkLoginName(@RequestParam("username") String loginName) {
 		if (accountService.findMemberByUserName(loginName) == null) {
+//			System.out.println("!!!!!!!!!!!!!");
 			return "true";
 		} else {
 			return "false";
