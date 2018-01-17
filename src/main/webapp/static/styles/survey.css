@@ -1,0 +1,32 @@
+@CHARSET "UTF-8";
+table{
+	    font-size:14px;
+	    bordercolor="#999999"
+}
+table th, table td {
+	text-align: center !important;
+	height:40px;
+	margin:0px;
+	padding:0px;
+	overflow:hidden;
+	font-size:20px;
+}
+input{
+	/* font-family:Georgia, "Times New Roman", Times, serif; */
+	font-size:20px;
+	margin:0px;
+	padding:0px;
+	overflow:hidden;
+	table-layout:fixed;
+	/* border-style:hidden; */
+}
+
+table th {
+	cursor: default !important;
+}
+img{
+	width:480px;
+	height:90px;
+	margin-top:20px;
+	margin-left:50px;
+}

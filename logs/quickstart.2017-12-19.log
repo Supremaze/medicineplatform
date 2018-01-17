@@ -1,0 +1,51 @@
+14:35:11.257 [main] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+15:54:54.624 [main] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+15:54:56.659 [main] WARN  o.e.j.u.component.AbstractLifeCycle - FAILED SelectChannelConnector@0.0.0.0:8080: java.net.BindException: Address already in use: bind
+java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind(Native Method) ~[na:1.6.0_23]
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:126) ~[na:1.6.0_23]
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:59) ~[na:1.6.0_23]
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.open(SelectChannelConnector.java:187) ~[jetty-webapp-7.6.14.v20131031.jar:7.6.14.v20131031]
+	at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316) ~[jetty-webapp-7.6.14.v20131031.jar:7.6.14.v20131031]
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.doStart(SelectChannelConnector.java:265) ~[jetty-webapp-7.6.14.v20131031.jar:7.6.14.v20131031]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-webapp-7.6.14.v20131031.jar:7.6.14.v20131031]
+	at org.eclipse.jetty.server.Server.doStart(Server.java:292) [jetty-webapp-7.6.14.v20131031.jar:7.6.14.v20131031]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-webapp-7.6.14.v20131031.jar:7.6.14.v20131031]
+	at org.springside.examples.quickstart.QuickStartServer.main(QuickStartServer.java:33) [test-classes/:na]
+15:54:56.661 [main] WARN  o.e.j.u.component.AbstractLifeCycle - FAILED org.eclipse.jetty.server.Server@141cd01: java.net.BindException: Address already in use: bind
+java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind(Native Method) ~[na:1.6.0_23]
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:126) ~[na:1.6.0_23]
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:59) ~[na:1.6.0_23]
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.open(SelectChannelConnector.java:187) ~[jetty-webapp-7.6.14.v20131031.jar:7.6.14.v20131031]
+	at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316) ~[jetty-webapp-7.6.14.v20131031.jar:7.6.14.v20131031]
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.doStart(SelectChannelConnector.java:265) ~[jetty-webapp-7.6.14.v20131031.jar:7.6.14.v20131031]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) ~[jetty-webapp-7.6.14.v20131031.jar:7.6.14.v20131031]
+	at org.eclipse.jetty.server.Server.doStart(Server.java:292) ~[jetty-webapp-7.6.14.v20131031.jar:7.6.14.v20131031]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) ~[jetty-webapp-7.6.14.v20131031.jar:7.6.14.v20131031]
+	at org.springside.examples.quickstart.QuickStartServer.main(QuickStartServer.java:33) [test-classes/:na]
+19:53:56.820 [main] WARN  o.hibernate.ejb.HibernatePersistence - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+19:53:58.813 [main] WARN  o.e.j.u.component.AbstractLifeCycle - FAILED SelectChannelConnector@0.0.0.0:8080: java.net.BindException: Address already in use: bind
+java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind(Native Method) ~[na:1.6.0_23]
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:126) ~[na:1.6.0_23]
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:59) ~[na:1.6.0_23]
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.open(SelectChannelConnector.java:187) ~[jetty-webapp-7.6.14.v20131031.jar:7.6.14.v20131031]
+	at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316) ~[jetty-webapp-7.6.14.v20131031.jar:7.6.14.v20131031]
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.doStart(SelectChannelConnector.java:265) ~[jetty-webapp-7.6.14.v20131031.jar:7.6.14.v20131031]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-webapp-7.6.14.v20131031.jar:7.6.14.v20131031]
+	at org.eclipse.jetty.server.Server.doStart(Server.java:292) [jetty-webapp-7.6.14.v20131031.jar:7.6.14.v20131031]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) [jetty-webapp-7.6.14.v20131031.jar:7.6.14.v20131031]
+	at org.springside.examples.quickstart.QuickStartServer.main(QuickStartServer.java:33) [test-classes/:na]
+19:53:58.814 [main] WARN  o.e.j.u.component.AbstractLifeCycle - FAILED org.eclipse.jetty.server.Server@8d1800: java.net.BindException: Address already in use: bind
+java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind(Native Method) ~[na:1.6.0_23]
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:126) ~[na:1.6.0_23]
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:59) ~[na:1.6.0_23]
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.open(SelectChannelConnector.java:187) ~[jetty-webapp-7.6.14.v20131031.jar:7.6.14.v20131031]
+	at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316) ~[jetty-webapp-7.6.14.v20131031.jar:7.6.14.v20131031]
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.doStart(SelectChannelConnector.java:265) ~[jetty-webapp-7.6.14.v20131031.jar:7.6.14.v20131031]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) ~[jetty-webapp-7.6.14.v20131031.jar:7.6.14.v20131031]
+	at org.eclipse.jetty.server.Server.doStart(Server.java:292) ~[jetty-webapp-7.6.14.v20131031.jar:7.6.14.v20131031]
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64) ~[jetty-webapp-7.6.14.v20131031.jar:7.6.14.v20131031]
+	at org.springside.examples.quickstart.QuickStartServer.main(QuickStartServer.java:33) [test-classes/:na]

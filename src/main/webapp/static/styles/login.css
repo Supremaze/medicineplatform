@@ -1,0 +1,250 @@
+@CHARSET "UTF-8";
+.header {
+	width: 100%;
+    height: 105px;
+}
+.header-wrap{
+	width:960px;
+	margin: 0 auto;
+}
+.header-logo {
+	float:left;
+	width: 410px;
+}
+.header-logo img{
+	display: block;
+	width: 90px;
+    height: 90px;
+    float: left;
+    margin-right: 20px;
+    margin-top: 15px;
+}
+.header-logo h1{
+	display: block;
+	float: left;
+	margin: 50px 0 0 0;
+	font-size: 33px;
+}
+body{
+	
+	font-family: "microsoft yahei",Helvetica;
+}
+a:link {
+	text-decoration:none;
+}
+ a:visited {
+ 	text-decoration:none;
+}
+.container{
+	width: 960px;
+    margin: 100px auto 0;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 100px;
+}
+.container .form-group{
+	margin: 0;
+}
+.container .wrap01{
+	float: left;
+	width: 420px;
+	height: 374px;
+	padding: 25px 0 0 0;
+}
+.container .wrap01 li{
+	display: block;
+    width: 100%;
+    float: left;
+    line-height: 28px;
+    color: #888B8E;
+    font-size: 16px;
+}
+.container .wrap02{
+	float: right;
+	width: 350px;
+	border: 1px solid #dfdfe0;
+    box-shadow: 1px 3px 11px 3px #dfdfe0;
+    -webkit-box-shadow: 1px 3px 11px 3px #dfdfe0;
+    background: #fff;
+}
+.container .wrap02 h4{
+	display: block;
+	width: 100%;
+	font-size: 25px;
+	color: #4BBB92;
+	font-weight: bold;
+}
+
+.container .wrap02 ul{
+	list-style: none;
+    padding: 0;
+}
+.container .wrap02 li{
+	display: block;
+	float: left;
+	width: 45%;
+	padding: 0 4.5%;
+
+}
+.container .wrap02 li:first-child{
+	border-right:1px solid #dfdfe0;
+}
+
+.container .wrap02 li a{
+	float:left;
+	width:100%;
+	font-size: 18px;
+    font-weight: bold;
+    color:#666;
+    padding-bottom:6px;
+    text-align: center;
+    margin: 0;
+}
+.container .wrap02 li a:hover{
+	text-decoration: none;
+    color: #33a89e;
+}
+.container .wrap02 li.active a{
+	border-bottom:3px solid #33a89e;
+	color: #33a89e;
+}
+.container .wrap02 div#myTabContent{
+	float:left;
+	width: 100%;
+}
+.container .wrap02 label{
+	display: block;
+	float: left;
+	width: 21%;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 34px;
+	margin: 30px 5px 0 0; 
+}
+
+.container .wrap02 input{
+	display: block;
+	float: left;
+	height: 38px;
+	width: 75%;
+	margin-top: 30px;
+	padding: 9px 7px 9px 40px;
+	
+}
+.container .wrap02 .login-name{
+	background: #fff url("../images/common/user.png") no-repeat 14px center;
+}
+.container .wrap02 .login-password{
+	background: #fff url("../images/common/locked.png") no-repeat 14px center;
+}
+.container .wrap02 a{
+	display: block;
+	color: #4BBB92;	
+    margin: 11px 4px;
+    font-size: 13px;
+}
+.container .wrap02 a:hover{
+	color: orange;
+	text-decoration: underline;
+}
+.container .wrap02 .forget{
+	float: left;
+}
+.container .wrap02 .register{
+	float: right;
+}
+.container .wrap02 .login-submit{
+	display: block;
+	width: 100%;
+	background-color:#33a89e;
+	color: #fff;
+    font-size: 16px
+}
+.container .wrap02 .login-submit:hover{
+	background-color:#2d948b;	
+}
+.container .other-login{
+	border-top: 1px dashed #e5e5e5;
+	height: 50px;
+	margin-left: 9%;
+}
+.container .other-login h6{
+	display: block;
+	float: left;
+	color: #757575;
+	margin-top: 17px;
+}
+.other-login a{
+	display: block;
+	float: left;
+	width: 22px;
+    height: 22px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-indent: -999px;
+    margin-right: 10px;
+}
+.qq-login{
+	margin-left: 10px;
+    background: url(../images/common/bg_other_login.gif) left top no-repeat;
+}
+.sina-login{
+    background: url(../images/common/bg_other_login.gif) right top no-repeat;
+}
+.wx-login{
+	background: url(../images/common/bg_wx_login.gif) left top no-repeat;
+}
+.qq-login:hover{
+	background: url(../images/common/bg_other_login.gif) left bottom no-repeat;
+}
+.sina-login:hover{
+	background: url(../images/common/bg_other_login.gif) right bottom no-repeat;
+}
+.wx-login:hover{
+	background: url(../img/bg_wx_login.gif) left bottom no-repeat;
+}
+.main-nav {
+float: right;
+height: 60px;
+text-align: center;
+margin-top: 60px;
+list-style:none;
+    width: 430px;
+}
+.main-nav li {
+position: relative;
+z-index: 1000;
+margin-left: 50px;
+font-size: 18px;
+}
+.main-nav li, .main-nav a {
+float: left;
+color: #333;
+}
+
+.main-nav .active {
+padding-bottom: 8px;
+border-bottom: 3px solid #33a89e;
+}
+.main-nav .active a {
+color: #33a89e;
+}
+.Logdiv {
+width: 395px;
+height: 422px;
+background: #fff;
+}
+.Logth {
+font-size: 22px;
+font-family: '微软雅黑';
+color: #333;
+margin-left: 33px;
+padding-top: 25px;
+line-height: 25px;
+}
+
+.adminLoginForm,.doctorLoginForm{
+	   margin: 15px 30px 65px 30px;
+}
+.userLoginForm{
+	   margin: 15px 30px 40px 30px;
+}

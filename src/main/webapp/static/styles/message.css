@@ -1,0 +1,142 @@
+.main-right {
+float: left;
+width: 75%;
+text-align: left;
+padding-left:10%;
+margin-top:20px;
+}
+
+.uc-body {
+padding-bottom: 30px;
+}
+
+.arial {
+font-family: Helvetica,Arial,SimSun;
+}
+
+div.title-h3 {
+position: relative;
+    background-color: #fff;
+    padding-left: 12px;
+    border: 2px solid #DDD;
+    border-bottom:0;
+}
+
+.title-h3 h3 {
+float: left;
+margin-right: 5px;
+white-space: nowrap;
+}
+
+.title-h3 h3, h3.title-h3 {
+height: 25px;
+font-size: 18px;
+font-weight: bold;
+line-height: 1.1em;
+color: #333;
+}
+
+.btn {
+position: relative;
+display: inline-block;
+zoom: 1;
+overflow: visible;
+vertical-align: middle;
+height: 26px;
+margin: 0;
+padding: 0 2.1em;
+border-style: none;
+border-bottom-style: solid;
+border-bottom-width: 2px;
+outline: 0;
+cursor: pointer;
+-moz-background-clip: padding;
+background-clip: padding-box;
+font: normal 14px/26px 'Hiragino Sans GB','Microsoft YaHei','SimSun',sans-serif;
+text-decoration: none;
+text-align: center;
+white-space: nowrap;
+-webkit-border-radius: 0;
+-moz-border-radius: 0;
+border-radius: 0;
+}
+
+.btn-white {
+border-bottom-color: #D6D6D6;
+background: #EEE;
+color: #666;
+}
+
+.btn-s {
+height: 23px;
+font-size: 12px;
+font-weight: normal;
+line-height: 24px;
+}
+
+.r {
+float: right;
+}
+
+ol, ul {
+list-style: none;
+}
+
+.message-container {
+padding: 20px;
+border: 2px solid #DDD;
+border-top: 2px solid #337ab7;
+    background-color: #fff;
+    
+}
+
+.message-form li {
+padding-left: 70px;
+margin-bottom: 20px;
+line-height: 22px;
+
+}
+
+.message-form label {
+margin-left: -70px;
+text-align: right;
+width: 80px;
+float: left;
+height: 22px;
+}
+
+.message-form .comment-field {
+width: 510px;
+height: 170px;
+padding: 4px 5px;
+border: 1px solid #CCC;
+font-size: 12px;
+}
+
+.message-form .comment-limit {
+color: #999;
+}
+
+
+
+.btn-green {
+border-bottom-color: #337ab7;
+background: #337ab7;
+color: #FFF;
+}
+
+.message-form .charsLeft {
+color: #F60;
+}
+
+.message-form .comment-loading {
+display: none;
+background: url(//static2.51fanli.net/common/images/loading/circle-16-black.gif) no-repeat left center;
+margin-left: 10px;
+padding-left: 20px;
+color: #333;
+}
+
+.l {
+float: left;
+}

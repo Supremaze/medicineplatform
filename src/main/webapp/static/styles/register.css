@@ -1,0 +1,310 @@
+/* CSS Document */
+.login-container {
+	display: none;
+	width: 100%;
+	min-width: 1000px;
+	height: 35px;
+	font-size: 12px;
+	background: #f7f7f7;
+	border-bottom: 1px solid #e2e2e2;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+.login-bar {
+	display: none;
+	width: 1000px;
+	position: relative;
+	margin: 0 auto;
+}
+
+.header {
+	width: 100%;
+	height: 106px;
+}
+
+.header .header-logo {
+	width: 980px;
+	margin: 0 auto;
+}
+
+a {
+	text-decoration: none;
+	outline: none;
+	border-right: thin #33a89e;
+}
+
+.header .header-logo img {
+	width: 67px;
+	height: 67px;
+	float: left;
+	margin-right: 20px;
+	margin-top: 33px;
+}
+
+.header .header-logo h1 {
+	color: #333;
+	font-size: 24px;
+	font-weight: 900;
+	line-height: 120px;
+}
+
+.contenter {
+	width: 980px;
+	margin: 0 auto;
+	border-bottom: 1px solid #e5e5e5;
+	height: 509px;
+}
+
+.contenter .newuser {
+	width: 96%;
+	margin: 0 auto;
+	margin-top: 46px;
+	border: 1px solid #dfdfe0;
+	box-shadow: 1px 3px 11px 3px #dfdfe0;
+	-webkit-box-shadow: 1px 3px 11px 3px #dfdfe0;
+	padding-bottom: 45px;
+	background-color: #fff;
+	overflow: hidden;
+}
+
+.newuser ul {
+	list-style: none;
+	padding: 0;
+	width: 60%;
+	float: left;
+	margin: 30px 0 0 24px;
+}
+
+.newuser li {
+   display: block;
+   float: left;
+   padding: 0 5%;
+}
+
+.newuser .wordbreak {
+	border-right: 1px solid #dfdfe0;
+}
+
+.newuser li a {
+	float: left;
+	width: 100%;
+	font-size: 18px;
+	font-weight: bold;
+	color: #666;
+	padding-bottom: 6px;
+	text-align: center;
+	margin: 0;
+}
+
+.newuser li a:hover {
+	text-decoration: none;
+	color: #33a89e;
+}
+
+.newuser li.active a {
+	border-bottom: 3px solid #33a89e;
+	color: #33a89e;
+}
+
+.s-zc-left {
+	width: 532px;
+	float: left;
+	clear: both;
+	margin-top: 30px;
+	margin-left: 50px;
+	font-family: \5FAE\8F6F\96C5\9ED1;
+}
+
+.s-gg-text {
+	margin-left: 0px;
+	margin: 0;
+}
+
+.s-gg-text dt {
+	float: left;
+	clear: both;
+	margin-top: 5px;
+	font-family: \5FAE\8F6F\96C5\9ED1;
+	width: 66px;
+	margin-right: 10px;
+}
+
+.s-zc-left .s-gg-text dt label {
+	font-size: 14px;
+	color: #666;
+	float: left;
+}
+
+.s-gg-text dd {
+	margin: 0;
+	padding: 0;
+	float: left;
+}
+
+.s-zc-left .s-gg-text dd span {
+	color: #666;
+	margin-left: 10px;
+	display: inline-block;
+	width: 180px;
+	float: right;
+	margin-top: 8px;
+	font-family: '\5B8B\4F53';
+}
+
+.s-gg-text dd input {
+	width: 240px;
+	height: 34px;
+	text-indent: 10px;
+	border: 1px solid #dfdfe0;
+	float: left;
+	font-size: 12px;
+	font-family: '\5FAE\8F6F\96C5\9ED1';
+	margin: 5px;
+}
+
+.s-zc-left .s-gg-text dd .s-mfhqyzm {
+	color: #333;
+	font-size: 12px;
+	width: 118px;
+	height: 36px;
+	background: #f2f2f2;
+	border: 1px solid #dfdfe0;
+	text-indent: 0;
+	text-align: center;
+}
+
+.s-gg-yzm dd input {
+	width: 78px;
+	height: 34px;
+}
+
+.s-gg-yzm dd span {
+	width: 49px;
+	display: block;
+	float: right;
+	margin-right: 19px;
+}
+
+.s-zc-left .s-01dl-sub {
+	width: 243px;
+	margin-top: 10px;
+	margin-left: 66px;
+}
+
+.s-01dl-sub {
+	width: 292px;
+	height: 40px;
+	border-radius: 2px;
+	background: #33a89e;
+	color: #fff;
+	font-size: 16px;
+	border: none;
+	margin-top: 28px;
+	margin-left: 25px;
+}
+
+.s-01dl-sub:hover {
+	background-color: #2d948b;
+}
+
+.s-zc-dlrk {
+	float: right;
+	border-left: 1px solid #dfdfe0;
+	margin-right: 30px;
+	padding-bottom: 15px;
+}
+
+.s-zc-dlrk p {
+	margin-left: 25px;
+	color: #666;
+	font-size: 14px;
+}
+
+.s-zc-dlrk p a {
+	color: #33a89e;
+}
+
+.s-yhzc .s-yyzh {
+	width: 232px;
+	border-bottom: 1px dotted #999;
+	margin-right: 55px;
+	margin-left: 30px;
+	padding-bottom: 12px;
+}
+
+.s-yhzc h3 {
+	font-size: 14px;
+	font-weight: normal;
+	margin-left: 30px;
+	margin-top: 15px;
+	margin-bottom: 18px;
+}
+
+.s-yhzc h2 {
+	font-size: 14px;
+	font-weight: normal;
+	margin-left: 30px;
+	margin-bottom: 10px;
+}
+
+.s-yhzc h2 a {
+	color: #33a89e;
+}
+
+.s-yhzc .s-zc-syjy {
+	margin-left: 30px;
+	font-size: 12px;
+	line-height: 30px;
+}
+
+.s-zddl-wjmm span input {
+	float: left;
+	margin-top: 3px;
+}
+
+.s-00tyzcxy {
+	vertical-align: sub;
+}
+
+.mr10 {
+	margin-right: 10px;
+}
+
+.s-zc-left .s-zddl-wjmm {
+	padding-left: 66px;
+}
+
+.s-zddl-wjmm a {
+	color: #33a89e;
+}
+
+.s-00yxzc .s-yxyzm dd span {
+	float: left;
+	width: 50px;
+	font-size: 9px;
+}
+
+.s-zc-left .s-gg-text dd .s-sru {
+	width: 102px;
+}
+
+.s-zc-left .s-gg-text dd img {
+	width: 70px;
+	height: 36px;
+	margin-top: 5px;
+}
+
+.ml10 {
+	margin-left: 10px;
+}
+
+.fl {
+	float: left;
+	display: inline;
+}
+
+.mt20 {
+	margin-top: 10px;
+}
