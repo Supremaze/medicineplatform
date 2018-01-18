@@ -38,7 +38,7 @@
 				</div>
 			</div>
 			<div class="control-group">
-				<label for="realname" class="control-label">用户名:</label>
+				<label for="realname" class="control-label">真实姓名:</label>
 				<div class="controls">
 					<input type="text" id="realname" name="realname" class="input-large required"/>
 				</div>
@@ -53,6 +53,13 @@
 				<label for="confirmPassword" class="control-label">确认密码:</label>
 				<div class="controls">
 					<input type="password" id="confirmPassword" name="confirmPassword" class="input-large required" equalTo="#plainPassword"/>
+				</div>
+			</div>
+			<div class="control-group">
+				<label for="roles" class="control-label">注册角色:</label>
+				<div class="controls">
+					<input id="roles" name="roles" type="radio" value="doctor" /> 医生
+					<input id="roles" name="roles" type="radio" value="user" /> 用户
 				</div>
 			</div>
 			<div class="form-actions">

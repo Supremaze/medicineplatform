@@ -59,9 +59,8 @@ public class AccountService {
 
 	public void registerMember(Member mem) {
 		entryptPassword(mem);
-		mem.setRoles("user");
-		mem.setRegisterDate(clock.getCurrentDate());
-
+//		mem.setRoles();
+		mem.setRegtime(clock.getCurrentDate());
 		memberDao.save(mem);
 	}
 
@@ -94,7 +93,7 @@ public class AccountService {
 	 */
 	private String getCurrentUserName() {
 		ShiroUser user = (ShiroUser) SecurityUtils.getSubject().getPrincipal();
-		return user.loginName;
+		return user.username;
 	}
 
 	/**

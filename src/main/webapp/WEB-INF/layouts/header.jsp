@@ -146,6 +146,31 @@
 					</ul></li>
 
 			</shiro:hasRole>
+			<shiro:hasRole name="doctor">
+				<li><a href="#myOrder" class="menu-first collapse"
+					data-toggle="collapse"> <i class="icon-user"></i>&nbsp;&nbsp;诊断管理
+						<i class="icon-chevron-down" style="float: right;"></i>
+				</a>
+					<ul id="myOrder" class="menu-second collapse sub-menu">
+						<li><a href="${ctx}/doctor/recordList" class="sub-menu-list"><i
+								class="icon-food"></i>&nbsp;&nbsp;未诊断</a></li>
+						<li><a href="${ctx}/serviceOrder" class="sub-menu-list"><i
+								class="icon-home"></i>&nbsp;&nbsp;已诊断</a></li>
+					</ul></li>
+			</shiro:hasRole>
+			<li><a href="#myOrder1" class="menu-first collapse"
+					data-toggle="collapse"> <i class="icon-user"></i>&nbsp;&nbsp;系统设置
+						<i class="icon-chevron-down" style="float: right;"></i>
+				</a>
+					<ul id="myOrder1" class="menu-second collapse sub-menu">
+						<li><a href="${ctx}/dietOrder" class="sub-menu-list"><i
+								class="icon-food"></i>&nbsp;&nbsp;个人资料</a></li>
+						<li><a href="${ctx}/serviceOrder" class="sub-menu-list"><i
+								class="icon-home"></i>&nbsp;&nbsp;修改密码</a></li>
+					</ul></li>
+			
+			
+			
 
 
 			

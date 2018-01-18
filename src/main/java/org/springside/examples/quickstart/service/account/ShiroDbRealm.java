@@ -52,7 +52,7 @@ public class ShiroDbRealm extends AuthorizingRealm {
 	@Override
 	protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
 		ShiroUser shiroUser = (ShiroUser) principals.getPrimaryPrincipal();
-		Member user = accountService.findMemberByUserName(shiroUser.loginName);
+		Member user = accountService.findMemberByUserName(shiroUser.username);
 		SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
 		info.addRoles(user.getRoleList());
 		return info;
@@ -79,17 +79,21 @@ public class ShiroDbRealm extends AuthorizingRealm {
 	public static class ShiroUser implements Serializable {
 		private static final long serialVersionUID = -1373760761780840081L;
 		public Long id;
-		public String loginName;
-		public String name;
+		public String username;
+		public String roles;
 
-		public ShiroUser(Long id, String loginName, String name) {
+		public ShiroUser(Long id, String username, String roles) {
 			this.id = id;
-			this.loginName = loginName;
-			this.name = name;
+			this.username = username;
+			this.roles = roles;
 		}
 
-		public String getName() {
-			return name;
+//		public String getUsername() {
+//			return username;
+//		}
+		
+		public Long getUid(){
+			return id;
 		}
 
 		/**
@@ -97,7 +101,7 @@ public class ShiroDbRealm extends AuthorizingRealm {
 		 */
 		@Override
 		public String toString() {
-			return loginName;
+			return username;
 		}
 
 		/**
@@ -105,7 +109,7 @@ public class ShiroDbRealm extends AuthorizingRealm {
 		 */
 		@Override
 		public int hashCode() {
-			return Objects.hashCode(loginName);
+			return Objects.hashCode(username);
 		}
 
 		/**
@@ -123,11 +127,11 @@ public class ShiroDbRealm extends AuthorizingRealm {
 				return false;
 			}
 			ShiroUser other = (ShiroUser) obj;
-			if (loginName == null) {
-				if (other.loginName != null) {
+			if (username == null) {
+				if (other.username != null) {
 					return false;
 				}
-			} else if (!loginName.equals(other.loginName)) {
+			} else if (!username.equals(other.username)) {
 				return false;
 			}
 			return true;
