@@ -52,10 +52,19 @@
 					<td>${rresult.cus.age}</td>
 					<td>${rresult.cus.weight}</td>
 					<td>${rresult.cus.height}</td>
-					<td><a href="${ctx}/doctor/delete/${rresult.id}">诊断</a>|<a href="${ctx}/task/delete/${task.id}">查看档案</a></td>
+					<td><a href="${ctx}/doctor/giveDiagnose/${rresult.id}">诊断</a>|<a href="${ctx}/doctor/recordForm/${rresult.id}">查看档案</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>
+		</c:when>
+		<c:otherwise>
+			</tbody>
+			</table>
+			<div style="margin:0px auto;width:100%;text-align:center;">
+				<a style="color:#aaa;font-size:18px">未存在数据！</a>
+			</div>
+			</c:otherwise>
+		</c:choose>
 	</table>
 
 	<tags:pagination page="${tasks}" paginationSize="5" />

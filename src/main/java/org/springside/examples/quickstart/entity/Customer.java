@@ -146,6 +146,8 @@ public class Customer extends IdEntity {
 	public void setBingshi(String bingshi) {
 		this.bingshi = bingshi;
 	}
+	// 设定JSON序列化时的日期格式
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+08:00")
 	public int getAddtime() {
 		return addtime;
 	}
@@ -200,6 +202,8 @@ public class Customer extends IdEntity {
 	public void setBirth(String birth) {
 		this.birth = birth;
 	}
+	// 设定JSON序列化时的日期格式
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+08:00")
 	public Date getRegisterDate() {
 		return registerDate;
 	}

@@ -18,5 +18,12 @@ public class RecordsResultService {
 		return rresultDao.getUndiagnoseByDocid(docid);
 	}
 	
+	public RecordsResult getRecordsResultById(Long rrid){
+		return rresultDao.findOne(rrid);
+	}
+	public void updateRResult(RecordsResult rr){
+		rresultDao.save(rr);
+	}
+	
 
 }
