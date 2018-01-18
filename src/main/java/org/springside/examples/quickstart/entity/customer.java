@@ -17,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.google.common.collect.ImmutableList;
 
 @Entity
-@Table(name = "customer")
+@Table(name = "tbl_customer")
 public class Customer extends IdEntity {
 	private String realname;
 	private String snCustomer;
