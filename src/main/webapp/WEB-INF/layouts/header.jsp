@@ -152,9 +152,9 @@
 						<i class="icon-chevron-down" style="float: right;"></i>
 				</a>
 					<ul id="myOrder" class="menu-second collapse sub-menu">
-						<li><a href="${ctx}/doctor/recordList" class="sub-menu-list"><i
+						<li><a href="${ctx}/doctor/chooseRecord" class="sub-menu-list"><i
 								class="icon-food"></i>&nbsp;&nbsp;未诊断</a></li>
-						<li><a href="${ctx}/serviceOrder" class="sub-menu-list"><i
+						<li><a href="${ctx}/doctor/chooseDiagnoseRecord" class="sub-menu-list"><i
 								class="icon-home"></i>&nbsp;&nbsp;已诊断</a></li>
 					</ul></li>
 			</shiro:hasRole>
