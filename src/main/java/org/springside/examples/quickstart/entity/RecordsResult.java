@@ -4,6 +4,7 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -109,7 +110,7 @@ public class RecordsResult extends IdEntity {
 	}
 	
 	@ManyToOne
-	@JoinColumn(name = "uid")
+	@JoinColumn(name = "customer_id")
 	public Customer getCus() {
 		return cus;
 	}

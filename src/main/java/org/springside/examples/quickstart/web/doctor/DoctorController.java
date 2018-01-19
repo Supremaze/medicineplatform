@@ -1,6 +1,7 @@
 package org.springside.examples.quickstart.web.doctor;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -34,27 +35,33 @@ import com.google.common.collect.Maps;
 @Controller
 @RequestMapping(value = "/doctor")
 public class DoctorController {
-	private static Map<String, String> sortTypes = Maps.newLinkedHashMap();
-	static {
-		sortTypes.put("auto", "自动");
-		sortTypes.put("title", "标题");
-	}
 	private Clock clock = Clock.DEFAULT;
-	@Autowired
-	 private AccountService accountService;
+//	@Autowired
+//	 private AccountService accountService;
 	@Autowired
 	 private RecordsResultService recordsResultService;
-	@Autowired
-	private CustomerService cusService;
+//	@Autowired
+//	private CustomerService cusService;
 	@Autowired
 	private RecordService recService;
-	@RequestMapping(value = "chooseRecord")
+	@RequestMapping(value = "chooseRecord",method = RequestMethod.GET)
 	public String showList(Model model,HttpServletRequest  request,RedirectAttributes redirectAttributes) {
 		Long memId = getCurrentMemberId();
+//		List<RecordsResult> rresultList = new ArrayList<RecordsResult>();
 		List<RecordsResult> rresultList=recordsResultService.getUndiagnoseByDocid(memId);
 			model.addAttribute("rresultList",rresultList);
 			return "doctor/recordList";		
-		}	
+		}
+	
+	@RequestMapping(value = "chooseDiagnoseRecord",method = RequestMethod.GET)
+	public String showRecord(Model model,HttpServletRequest  request,RedirectAttributes redirectAttributes) {
+		Long memId = getCurrentMemberId();
+//		List<RecordsResult> rresultList = new ArrayList<RecordsResult>();
+		List<RecordsResult> rresultList=recordsResultService.getUndiagnoseByDocid(memId);
+			model.addAttribute("rresultList",rresultList);
+			model.addAttribute("diagnose",1);
+			return "doctor/recordList";		
+		}
 	
 	@RequestMapping(value = "giveDiagnose/{rrid}", method = RequestMethod.GET)
 	public String createForm(RedirectAttributes redirectAttributes,Model model,@PathVariable("rrid") Long recordResultId) {

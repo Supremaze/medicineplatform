@@ -10,6 +10,10 @@ import org.springside.examples.quickstart.entity.RecordsResult;
 public interface RecordsResultDao extends PagingAndSortingRepository<RecordsResult, Long> {
 
 	@Modifying
-	@Query("select rresult from RecordsResult rresult where doctor_id=?1 and status=0")
+	@Query("select rr from RecordsResult rr where doctor_id=?1 and status=0")
 	List<RecordsResult> getUndiagnoseByDocid(Long docid);
+	
+	@Modifying
+	@Query("select rr from RecordsResult rr where doctor_id=?1 and status=1")
+	List<RecordsResult> getDiagnoseByDocid(Long docid);
 }

@@ -38,6 +38,7 @@
 				<th>年龄</th>
 				<th>身高/cm</th>
 				<th>体重/kg</th>
+				<c:if test="${not empty diagnose}"><th>诊断时间</th></c:if>
 				<th>管理操作</th>
 			</tr>
 		</thead>
@@ -52,7 +53,10 @@
 					<td>${rresult.cus.age}</td>
 					<td>${rresult.cus.weight}</td>
 					<td>${rresult.cus.height}</td>
-					<td><a href="${ctx}/doctor/giveDiagnose/${rresult.id}">诊断</a>|<a href="${ctx}/doctor/recordForm/${rresult.id}">查看档案</a></td>
+					<c:if test="${not empty diagnose}"><td>${rresult.res_time}</td></c:if>
+					<td><c:if test="${empty diagnose}"><a href="${ctx}/doctor/giveDiagnose/${rresult.id}">诊断</a>|<a href="${ctx}/record/showRecord/${rresult.id}">查看档案</a></c:if>
+					<c:otherwise><a href="${ctx}/record/showDiagnose/${rresult.id}">查看诊断</a></c:otherwise>
+					</td>
 				</tr>
 			</c:forEach>
 		</tbody>
@@ -67,7 +71,7 @@
 		</c:choose>
 	</table>
 
-	<tags:pagination page="${tasks}" paginationSize="5" />
+	
 	</div>
 </body>
 </html>
