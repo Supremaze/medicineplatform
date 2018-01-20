@@ -17,7 +17,7 @@
 	<div style="width:96%; padding:15px 2% 0px;">
 	<div class="daohanglink" style="float:left;">
 		<span class="daohang"></span> <span>首页</span><span>></span> <span>项目列表</span>
-		<a href="${ctx}/task/create" class="label label-warning"
+		<a href="${ctx}/customer/create" class="label label-warning"
 			style="float: right; margin: 8px;">添加项目</a>
 	</div>
 	<div class="row" style="float:left; width: 100%;background-color: rgb(248,248,248);margin-left:0px;margin-bottom:15px">
@@ -40,16 +40,16 @@
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach items="${tasks.content}" var="task">
+			<c:forEach items="${customers.content}" var="customer">
 				<tr>
-					<td><a href="${ctx}/task/update/${task.id}">${task.title}</a></td>
-					<td><a href="${ctx}/task/delete/${task.id}">删除</a></td>
+					<td><a href="${ctx}/customer/update/${customer.id}">${customer.address}</a></td>
+					<td><a href="${ctx}/customer/delete/${customer.id}">删除</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
 
-	<tags:pagination page="${tasks}" paginationSize="5" />
+	<tags:pagination page="${customers}" paginationSize="5" />
 	</div>
 </body>
 </html>

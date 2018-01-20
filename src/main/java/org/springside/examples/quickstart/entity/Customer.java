@@ -4,6 +4,8 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -45,6 +47,7 @@ public class Customer extends IdEntity {
 	private String jhr;//监护人
 	private String birth;
 	private Date registerDate;
+	private User user;
 	public Customer() {
 	}
 	public Customer(Long id) {
@@ -210,6 +213,18 @@ public class Customer extends IdEntity {
 	public void setRegisterDate(Date registerDate) {
 		this.registerDate = registerDate;
 	}
+
+	// JPA 基于USER_ID列的多对一关系定义
+	@ManyToOne
+	@JoinColumn(name = "adduser")
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
 	@Override
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this);

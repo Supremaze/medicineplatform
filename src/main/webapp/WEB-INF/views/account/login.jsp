@@ -22,6 +22,7 @@
 	<%
 	}
 	%>
+	<p></p>
 		<div class="control-group">
 			<label for="username" class="control-label">用户名:</label>
 			<div class="controls">
