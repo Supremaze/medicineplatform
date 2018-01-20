@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="tags" tagdir="/WEB-INF/tags"%>
@@ -6,7 +5,7 @@
 
 <html>
 <head>
-<title>受检者管理</title>
+<title>任务管理</title>
 </head>
 
 <body>
@@ -17,7 +16,7 @@
 	<div style="width:96%; padding:15px 2% 0px;">
 	<div class="daohanglink" style="float:left;">
 		<span class="daohang"></span> <span>首页</span><span>></span> <span>项目列表</span>
-		<a href="${ctx}/customer/create" class="label label-warning"
+		<a href="${ctx}/task/create" class="label label-warning"
 			style="float: right; margin: 8px;">添加项目</a>
 	</div>
 	<div class="row" style="float:left; width: 100%;background-color: rgb(248,248,248);margin-left:0px;margin-bottom:15px">
@@ -36,20 +35,26 @@
 		<thead>
 			<tr>
 				<th>任务</th>
-				<th>管理</th>
+				<th>性别</th>
+				<th>姓名</th>
+				<th>地址</th>
+				<th>添加者</th>
 			</tr>
 		</thead>
 		<tbody>
 			<c:forEach items="${customers.content}" var="customer">
 				<tr>
-					<td><a href="${ctx}/customer/update/${customer.id}">${customer.address}</a></td>
-					<td><a href="${ctx}/customer/delete/${customer.id}">删除</a></td>
+					<td><a href="${ctx}/task/update/${task.id}">${task.title}</a></td>
+					<td><a href="${ctx}/task/delete/${task.id}">删除</a></td>
+					<td><a href="${ctx}/task/update/${task.id}">${customer.realname}</a></td>
+					<td><a href="${ctx}/task/delete/${task.id}">删除</a></td>
+					<td><a href="${ctx}/task/delete/${task.id}">删除</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
-
-	<tags:pagination page="${customers}" paginationSize="5" />
+<a href="${ctx}/customer/test">test</a>
+	<tags:pagination page="${tasks}" paginationSize="5" />
 	</div>
 </body>
 </html>

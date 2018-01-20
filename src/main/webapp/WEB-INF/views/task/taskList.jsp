@@ -47,7 +47,7 @@
 			</c:forEach>
 		</tbody>
 	</table>
-<a href="${ctx}/customer1">test</a>
+<a href="${ctx}/customer">test</a>
 	<tags:pagination page="${tasks}" paginationSize="5" />
 	</div>
 </body>

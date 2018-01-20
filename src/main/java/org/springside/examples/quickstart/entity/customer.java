@@ -47,7 +47,7 @@ public class Customer extends IdEntity {
 	private String jhr;//监护人
 	private String birth;
 	private Date registerDate;
-	private User user;
+	private Member member;
 	public Customer() {
 	}
 	public Customer(Long id) {
@@ -216,13 +216,13 @@ public class Customer extends IdEntity {
 
 	// JPA 基于USER_ID列的多对一关系定义
 	@ManyToOne
-	@JoinColumn(name = "adduser")
-	public User getUser() {
-		return user;
+	@JoinColumn(name = "member_id")
+	public Member getMember() {
+		return member;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setMember(Member member) {
+		this.member = member;
 	}
 
 	@Override
