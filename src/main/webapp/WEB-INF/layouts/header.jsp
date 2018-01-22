@@ -158,6 +158,29 @@
 								class="icon-home"></i>&nbsp;&nbsp;已诊断</a></li>
 					</ul></li>
 			</shiro:hasRole>
+			
+			<shiro:hasRole name="manager">
+				<li><a href="#myOrder1" class="menu-first collapse"
+					data-toggle="collapse"> <i class="icon-user"></i>&nbsp;&nbsp;受检者管理
+						<i class="icon-chevron-down" style="float: right;"></i>
+				</a>
+					<ul id="myOrder1" class="menu-second collapse sub-menu">
+						<li><a href="${ctx}/manager/userCheck" class="sub-menu-list"><i
+								class="icon-home"></i>&nbsp;&nbsp;受检者审核</a></li>
+						<li><a href="${ctx}/manager/checkDiagnoseRecord" class="sub-menu-list"><i
+								class="icon-home"></i>&nbsp;&nbsp;听诊单审核</a></li>
+					</ul></li>
+					
+					<li><a href="#myCart" class="menu-first collapse"
+					data-toggle="collapse"> <i class="icon-user"></i>&nbsp;&nbsp;医生管理
+						<i class="icon-chevron-down" style="float: right;"></i>
+				</a>
+					<ul id="myCart" class="menu-second collapse sub-menu">
+						<li><a href="${ctx}/manager/checkDoctorReg" class="sub-menu-list"><i
+								class="icon-home"></i>&nbsp;&nbsp;医生注册审核<b class="cart-count">${dietcount}</b></a></li>
+					</ul></li>
+			</shiro:hasRole>
+			
 			<li><a href="#myOrder1" class="menu-first collapse"
 					data-toggle="collapse"> <i class="icon-user"></i>&nbsp;&nbsp;系统设置
 						<i class="icon-chevron-down" style="float: right;"></i>

@@ -58,7 +58,7 @@ public class DoctorController {
 		Long memId = getCurrentMemberId();
 //		List<RecordsResult> rresultList = new ArrayList<RecordsResult>();
 		List<RecordsResult> rresultList=recordsResultService.getUndiagnoseByDocid(memId);
-			model.addAttribute("rresultList",rresultList);
+			model.addAttribute("rresultList",rresultList); 
 			model.addAttribute("diagnose",1);
 			return "doctor/recordList";		
 		}

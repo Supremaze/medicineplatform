@@ -23,6 +23,8 @@ import org.springside.examples.quickstart.service.task.TaskService;
 import org.springside.modules.web.Servlets;
 import org.springside.examples.quickstart.service.customer.CustomerService;
 import org.springside.examples.quickstart.entity.Customer;
+import org.springside.examples.quickstart.repository.CustomerDao;
+import org.springside.examples.quickstart.service.customer.CustomerService;
 
 import com.google.common.collect.Maps;
 
@@ -81,7 +83,7 @@ public class CustomerController {
 	@RequestMapping(value = "create", method = RequestMethod.POST)
 	public String create(@Valid Customer newCustomer, RedirectAttributes redirectAttributes) {
 		Customer customer = new Customer(getCurrentAddUser());
-		newCustomer.setCustomer(customer);
+		//newCustomer.setCustomer(customer);
 
 		customerService.saveCustomer(newCustomer);
 		redirectAttributes.addFlashAttribute("message", "创建受检者档案成功");

@@ -22,12 +22,15 @@
 	<%
 	}
 	%>
+		<p></p>
+		
 		<div class="control-group">
 			<label for="username" class="control-label">用户名:</label>
 			<div class="controls">
 				<input type="text" id="username" name="username"  value="${username}" class="input-medium required"/>
 			</div>
 		</div>
+		
 		<div class="control-group">
 			<label for="password" class="control-label">密码:</label>
 			<div class="controls">
