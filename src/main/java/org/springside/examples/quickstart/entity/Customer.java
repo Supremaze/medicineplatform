@@ -28,9 +28,9 @@ public class Customer extends IdEntity {
 	private int age;
 	private String phone;
 	private String address;
-//	private String zipcode;
+	private String zipcode;
 	private String email;
-//	private int areaid;
+	private int areaid;
 	private String danwei;
 	private int weight;
 	private int height;
@@ -40,8 +40,8 @@ public class Customer extends IdEntity {
 	private Date addtime;
 	private int adduser;
 	private int isdelete;
-//	private int ifhospital;
-//	private int hospitalid;
+	private int ifhospital;
+	private int hospitalid;
 	private int kefuid;
 	private int status;
 	private String jhr;//监护人
@@ -65,6 +65,38 @@ public class Customer extends IdEntity {
 	public void setMember(Member member) {
 		this.member = member;
 	}
+	public String getZipcode() {
+		return zipcode;
+	}
+
+	public void setZipcode(String zipcode) {
+		this.zipcode = zipcode;
+	}
+
+	public int getAreaid() {
+		return areaid;
+	}
+
+	public void setAreaid(int areaid) {
+		this.areaid = areaid;
+	}
+
+	public int getIfhospital() {
+		return ifhospital;
+	}
+
+	public void setIfhospital(int ifhospital) {
+		this.ifhospital = ifhospital;
+	}
+
+	public int getHospitalid() {
+		return hospitalid;
+	}
+
+	public void setHospitalid(int hospitalid) {
+		this.hospitalid = hospitalid;
+	}
+
 	public String getRealname() {
 		return realname;
 	}
@@ -157,12 +189,12 @@ public class Customer extends IdEntity {
 	public void setAddtime(Date addtime) {
 		this.addtime = addtime;
 	}
-//	public int getAdduser() {
-//		return adduser;
-//	}
-//	public void setAdduser(int adduser) {
-//		this.adduser = adduser;
-//	}
+	public int getAdduser() {
+		return adduser;
+	}
+	public void setAdduser(int adduser) {
+		this.adduser = adduser;
+	}
 	public int getIsdelete() {
 		return isdelete;
 	}
