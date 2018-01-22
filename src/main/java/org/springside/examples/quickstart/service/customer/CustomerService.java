@@ -3,22 +3,21 @@ package org.springside.examples.quickstart.service.customer;
 import java.util.List;
 import java.util.Map;
 
+import javax.annotation.Resource;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.domain.Specification;
 import org.springside.examples.quickstart.entity.Customer;
-import org.springside.examples.quickstart.entity.Task;
 import org.springside.examples.quickstart.repository.CustomerDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.springside.examples.quickstart.repository.TaskDao;
 import org.springside.modules.persistence.DynamicSpecifications;
 import org.springside.modules.persistence.SearchFilter;
 import org.springside.modules.persistence.SearchFilter.Operator;
-import org.springside.examples.quickstart.repository.CustomerDao;
 
 
 //Spring Bean的标识.
@@ -26,9 +25,9 @@ import org.springside.examples.quickstart.repository.CustomerDao;
 //默认将类中的所有public函数纳入事务管理.
 @Transactional
 public class CustomerService {
-	
+	@Resource
 	private CustomerDao customerDao;
-	
+
 	public Customer getCustomer(Long id) {
 		return customerDao.findOne(id);
 	}
@@ -41,12 +40,15 @@ public class CustomerService {
 	public List<Customer> getAllCustomer() {
 		return (List<Customer>) customerDao.findAll();
 	}
-	public Page<Customer> getCustomer(Long memberId, Map<String, Object> searchParams, int pageNumber, int pageSize,
+	public List<Customer> getCustomerByMemid(Long memberId){
+		return customerDao.findByAdduser(memberId);
+	}
+	public Page<Customer> getUserCustomer(Long userId, Map<String, Object> searchParams, int pageNumber, int pageSize,
 			String sortType) {
 		PageRequest pageRequest = buildPageRequest(pageNumber, pageSize, sortType);
-		Specification<Customer> spec = buildSpecification(memberId, searchParams);
+		Specification<Customer> spec = buildSpecification(userId, searchParams);
 
-		return customerDao.findAll(pageRequest);
+		return customerDao.findAll(spec, pageRequest);
 	}
 	/**
 	 * 创建分页请求.
@@ -67,7 +69,7 @@ public class CustomerService {
 	 */
 	private Specification<Customer> buildSpecification(Long adduser, Map<String, Object> searchParams) {
 		Map<String, SearchFilter> filters = SearchFilter.parse(searchParams);
-		filters.put("user.id", new SearchFilter("user.id", Operator.EQ, adduser));
+		filters.put("member.id", new SearchFilter("member.id", Operator.EQ, adduser));
 		Specification<Customer> spec = DynamicSpecifications.bySearchFilter(filters.values(), Customer.class);
 		return spec;
 	}
