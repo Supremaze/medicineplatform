@@ -73,7 +73,6 @@ public class CustomerController {
 		return "customer/customerList";
 	}
 
-
 	@RequestMapping(value = "create", method = RequestMethod.GET)
 	public String createForm(Model model) {
 		model.addAttribute("customer", new Customer());
@@ -84,8 +83,6 @@ public class CustomerController {
 	@RequestMapping(value = "create", method = RequestMethod.POST)
 	public String create(@Valid Customer newCustomer, RedirectAttributes redirectAttributes) {
 
-		Member member = new Member(getCurrentMemberId());
-		newCustomer.setMember(member);
 
 		customerService.saveCustomer(newCustomer);
 		redirectAttributes.addFlashAttribute("message", "创建受检者档案成功");

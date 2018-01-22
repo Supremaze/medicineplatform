@@ -22,7 +22,7 @@ import com.google.common.collect.ImmutableList;
 @Table(name = "tbl_customer")
 public class Customer extends IdEntity {
 	private String realname;
-	private String sn_customer;
+	private String snCustomer;
 	private String sfz;
 	private String sex;
 	private int age;
@@ -37,7 +37,7 @@ public class Customer extends IdEntity {
 	private String tixing;
 	private String shenghua;
 	private String bingshi;
-	private Date addtime;
+	private int addtime;
 	private int adduser;
 	private int isdelete;
 	private int ifhospital;
@@ -46,6 +46,7 @@ public class Customer extends IdEntity {
 	private int status;
 	private String jhr;//监护人
 	private String birth;
+
 	
 //	private Date registerDate;
 	private Member member;
@@ -57,13 +58,11 @@ public class Customer extends IdEntity {
 	//private Date registerDate;
 
 	//private Date registerDate;
-
+	
 	public Customer() {
-
 	}
-
-	public void setMember(Member member) {
-		this.member = member;
+	public Customer(Long id) {
+		this.id = id;
 	}
 	public String getZipcode() {
 		return zipcode;
@@ -88,26 +87,17 @@ public class Customer extends IdEntity {
 	public void setIfhospital(int ifhospital) {
 		this.ifhospital = ifhospital;
 	}
-
-	public int getHospitalid() {
-		return hospitalid;
-	}
-
-	public void setHospitalid(int hospitalid) {
-		this.hospitalid = hospitalid;
-	}
-
 	public String getRealname() {
 		return realname;
 	}
 	public void setRealname(String realname) {
 		this.realname = realname;
 	}
-	public String getSn_customer() {
-		return sn_customer;
+	public String getSnCustomer() {
+		return snCustomer;
 	}
-	public void setSn_customer(String sn_customer) {
-		this.sn_customer = sn_customer;
+	public void setSnCustomer(String snCustomer) {
+		this.snCustomer = snCustomer;
 	}
 	public String getSfz() {
 		return sfz;
@@ -139,12 +129,14 @@ public class Customer extends IdEntity {
 	public void setAddress(String address) {
 		this.address = address;
 	}
+
 	public String getEmail() {
 		return email;
 	}
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
 	public String getDanwei() {
 		return danwei;
 	}
@@ -183,10 +175,10 @@ public class Customer extends IdEntity {
 	}
 	// 设定JSON序列化时的日期格式
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+08:00")
-	public Date getAddtime() {
+	public int getAddtime() {
 		return addtime;
 	}
-	public void setAddtime(Date addtime) {
+	public void setAddtime(int addtime) {
 		this.addtime = addtime;
 	}
 	public int getAdduser() {
@@ -200,6 +192,12 @@ public class Customer extends IdEntity {
 	}
 	public void setIsdelete(int isdelete) {
 		this.isdelete = isdelete;
+	}
+	public int getHospitalid() {
+		return hospitalid;
+	}
+	public void setHospitalid(int hospitalid) {
+		this.hospitalid = hospitalid;
 	}
 	public int getKefuid() {
 		return kefuid;
@@ -225,7 +223,15 @@ public class Customer extends IdEntity {
 	public void setBirth(String birth) {
 		this.birth = birth;
 	}
-
+	// 设定JSON序列化时的日期格式
+//
+//	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+08:00")
+//	public Date getRegisterDate() {
+//		return registerDate;
+//	}
+//	public void setRegisterDate(Date registerDate) {
+//		this.registerDate = registerDate;
+//	}
 	// 设定JSON序列化时的日期格式
 
 //	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+08:00")
@@ -243,6 +249,10 @@ public class Customer extends IdEntity {
 //	public void setRegisterDate(Date registerDate) {
 //		this.registerDate = registerDate;
 //	}
+
+	public void setMember(Member member) {
+		this.member = member;
+	}
 
 
 	@Override
