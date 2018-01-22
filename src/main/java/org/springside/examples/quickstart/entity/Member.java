@@ -45,6 +45,8 @@ public class Member extends IdEntity {
 	private String salt;
 	private String plainPassword;
 	private int price;
+	//客服不予通过时的说明
+	private String content;
 
 
 	public Member() {
@@ -246,6 +248,14 @@ public class Member extends IdEntity {
 
 	public void setUsername(String username) {
 		this.username = username;
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
 	}
 
 

@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,6 +24,11 @@ import org.springside.examples.quickstart.entity.Member;
 import org.springside.examples.quickstart.service.account.ShiroDbRealm.ShiroUser;
 import org.springside.modules.web.Servlets;
 import org.springside.examples.quickstart.service.customer.CustomerService;
+
+import org.springside.examples.quickstart.entity.Customer;
+import org.springside.examples.quickstart.repository.CustomerDao;
+import org.springside.examples.quickstart.service.customer.CustomerService;
+
 
 import com.google.common.collect.Maps;
 
@@ -65,7 +71,8 @@ public class CustomerController {
 
 		return "customer/customerList";
 	}
-	
+
+
 	@RequestMapping(value = "create", method = RequestMethod.GET)
 	public String createForm(Model model) {
 		model.addAttribute("customer", new Customer());
@@ -75,6 +82,7 @@ public class CustomerController {
 
 	@RequestMapping(value = "create", method = RequestMethod.POST)
 	public String create(@Valid Customer newCustomer, RedirectAttributes redirectAttributes) {
+
 		Member member = new Member(getCurrentMemberId());
 		newCustomer.setMember(member);
 
@@ -83,13 +91,42 @@ public class CustomerController {
 		return "redirect:/customer/showList";
 	}
 
+	@RequestMapping(value = "update/{id}", method = RequestMethod.GET)
+	public String updateForm(@PathVariable("id") Long id, Model model) {
+		model.addAttribute("customer", customerService.getCustomer(id));
+		model.addAttribute("action", "update");
+		return "customer/customerForm";
+	}
+
+	@RequestMapping(value = "update", method = RequestMethod.POST)
+	public String update(@Valid @ModelAttribute("customer") Customer customer, RedirectAttributes redirectAttributes) {
+		customerService.saveCustomer(customer);
+		redirectAttributes.addFlashAttribute("message", "更新受检者档案成功");
+		return "redirect:/customer/";
+
+	}
+
 	@RequestMapping(value = "delete/{id}")
 	public String delete(@PathVariable("id") Long id, RedirectAttributes redirectAttributes) {
 		customerService.deleteCustomer(id);
+
 		redirectAttributes.addFlashAttribute("message", "删除任务成功");
 		return "redirect:/customer/showList";
-	}
 	
+	}
+
+	/**
+	 * 所有RequestMapping方法调用前的Model准备方法, 实现Struts2 Preparable二次部分绑定的效果,先根据form的id从数据库查出Task对象,再把Form提交的内容绑定到该对象上。
+	 * 因为仅update()方法的form中有id属性，因此仅在update时实际执行.
+	 */
+	@ModelAttribute
+	public void getTask(@RequestParam(value = "id", defaultValue = "-1") Long id, Model model) {
+		if (id != -1) {
+			model.addAttribute("task", customerService.getCustomer(id));
+		}
+	}
+
+
 	/**
 	 * 取出Shiro中的当前用户Id.
 	 */
