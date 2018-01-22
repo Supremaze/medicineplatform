@@ -1,6 +1,7 @@
 package org.springside.examples.quickstart.web.customer;
 
 
+import java.io.Console;
 import java.util.List;
 import java.util.Map;
 
@@ -87,7 +88,7 @@ public class CustomerController {
 		newCustomer.setMember(member);
 
 		customerService.saveCustomer(newCustomer);
-		redirectAttributes.addFlashAttribute("message", "创建任务成功");
+		redirectAttributes.addFlashAttribute("message", "创建受检者档案成功");
 		return "redirect:/customer/showList";
 	}
 
@@ -132,6 +133,7 @@ public class CustomerController {
 	 */
 	private Long getCurrentMemberId() {
 		ShiroUser user = (ShiroUser) SecurityUtils.getSubject().getPrincipal();
+		//return user.getUid();
 		return user.getUid();
 	}
 

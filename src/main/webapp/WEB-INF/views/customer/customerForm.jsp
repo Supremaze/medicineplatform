@@ -14,6 +14,8 @@
 	</div>
 	<form id="inputForm" action="${ctx}/customer/${action}" method="post" class="form-horizontal">
 		<input type="hidden" name="id" value="${customer.id}"/>
+		<input type="hidden" name="id" value="${customer.kefuid}"/>
+		<input type="hidden" name="id" value="${customer.status}"/>
 		<fieldset>
 			<legend><small>管理任务</small></legend>
 			<div class="control-group">
@@ -41,9 +43,27 @@
 				</div>
 			</div>
 			<div class="control-group">
-				<label for="description" class="control-label">任务描述:</label>
+				<label for="description" class="control-label">sn_customer:</label>
 				<div class="controls">
-					<input type="text" id="description" name="description" class="input-large required" value="${customer.sex}"/>
+					<input type="text" id="description" name="description" class="input-large required" value="${customer.sn_customer}"/>
+				</div>
+			</div>
+			<div class="control-group">
+				<label for="description" class="control-label">电话:</label>
+				<div class="controls">
+					<input type="text" id="description" name="description" class="input-large required" value="${customer.phone}"/>
+				</div>
+			</div>
+			<div class="control-group">
+				<label for="description" class="control-label">客服:</label>
+				<div class="controls">
+					<input type="text" id="description" name="description" class="input-large required" value="${customer.kefuid}"/>
+				</div>
+			</div>
+			<div class="control-group">
+				<label for="description" class="control-label">状态:</label>
+				<div class="controls">
+					<input type="text" id="description" name="description" class="input-large required" value="${customer.status}"/>
 				</div>
 			</div>		
 			<div class="form-actions">
