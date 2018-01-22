@@ -77,19 +77,19 @@
 						<i class="icon-cog"></i>&nbsp;&nbsp;健康项目管理
 				</a></li>
 				<li><a href="${ctx}/healthQuestion"
-					onClick="getclassname(this)" class="link_onclick"> <i class="icon-edit"></i>&nbsp;&nbsp;自测试题管理
+					onClick="getclassname(this)" class="link_onclick"> <i class="icon-edit"></i>&nbsp;&nbsp;健康自测试题
 				</a></li>
 				<li><a href="${ctx}/diet" onClick="getclassname(this)" class="link_onclick"> <i
-						class="icon-food"></i>&nbsp;&nbsp;营养配膳
+						class="icon-food"></i>&nbsp;&nbsp;膳食管理
 				</a></li>
 				<li><a href="#Order" class="menu-first collapse"
 					data-toggle="collapse"> <i class="icon-user"></i>&nbsp;&nbsp;订单管理
 						<i class="icon-chevron-down" style="float: right;"></i>
 				</a>
 					<ul id="Order" class="menu-second collapse sub-menu">
-						<li><a href="${ctx}/dietOrder" class="link_onclick_a"><i
-								class="icon-food"></i>&nbsp;&nbsp;膳食订单</a></li>
-						<li><a href="${ctx}/serviceOrder" class="link_onclick_a"><i
+						<li><a href="${ctx}/dietOrder" class="link_onclick_a" style="color:white"><i
+								class="icon-food" style="color:white"></i>&nbsp;&nbsp;膳食订单</a></li>
+						<li style="font-color:white"><a href="${ctx}/serviceOrder" class="link_onclick_a"><i
 								class="icon-home"></i>&nbsp;&nbsp;服务订单</a></li>
 					</ul></li>
 
