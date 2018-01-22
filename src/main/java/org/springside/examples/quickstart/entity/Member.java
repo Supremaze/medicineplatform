@@ -53,6 +53,10 @@ public class Member extends IdEntity {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	public Member(Long id) {
+		this.id = id;
+	}
+
 
 	public String getAddress() {
 		return address;

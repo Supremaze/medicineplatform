@@ -22,12 +22,8 @@
 	<%
 	}
 	%>
-<<<<<<< HEAD
-		<p></p>
-		
-=======
 	<p></p>
->>>>>>> 89c2eeaf870b152702d05bd9a72f33775cd458f0
+
 		<div class="control-group">
 			<label for="username" class="control-label">用户名:</label>
 			<div class="controls">

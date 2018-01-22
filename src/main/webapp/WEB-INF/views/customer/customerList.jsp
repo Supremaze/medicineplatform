@@ -16,8 +16,8 @@
 	<div style="width:96%; padding:15px 2% 0px;">
 	<div class="daohanglink" style="float:left;">
 		<span class="daohang"></span> <span>首页</span><span>></span> <span>项目列表</span>
-		<a href="${ctx}/task/create" class="label label-warning"
-			style="float: right; margin: 8px;">添加项目</a>
+		<a href="${ctx}/customer/create" class="label label-warning"
+			style="float: right; margin: 8px;">添加受检者档案</a>
 	</div>
 	<div class="row" style="float:left; width: 100%;background-color: rgb(248,248,248);margin-left:0px;margin-bottom:15px">
 		<div class="span4 offset7" style="margin: 5px 5px 5px 5px;">
@@ -34,27 +34,28 @@
 	<table id="contentTable" class="table table-striped table-bordered table-condensed" style="margin-bottom:10px">
 		<thead>
 			<tr>
-				<th>任务</th>
-				<th>性别</th>
+				<th>编号</th>
 				<th>姓名</th>
+				<th>性别</th>
 				<th>地址</th>
 				<th>添加者</th>
+				<th>操作</th>
 			</tr>
 		</thead>
 		<tbody>
 			<c:forEach items="${customers.content}" var="customer">
 				<tr>
-					<td><a href="${ctx}/task/update/${task.id}">${task.title}</a></td>
-					<td><a href="${ctx}/task/delete/${task.id}">删除</a></td>
-					<td><a href="${ctx}/task/update/${task.id}">${customer.realname}</a></td>
-					<td><a href="${ctx}/task/delete/${task.id}">删除</a></td>
-					<td><a href="${ctx}/task/delete/${task.id}">删除</a></td>
+					<td>${customer.id }</td>
+					<td>${customer.realname }</td>
+					<td>${customer.sex}</td>
+					<td>${customer.address}</td>
+					<td>${customer.member.realname }</td>
+					<td><a href="${ctx}/customer/delete/${customer.id}">删除</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
-<a href="${ctx}/customer/test">test</a>
-	<tags:pagination page="${tasks}" paginationSize="5" />
+<tags:pagination page="${customers}" paginationSize="5" />
 	</div>
 </body>
 </html>
