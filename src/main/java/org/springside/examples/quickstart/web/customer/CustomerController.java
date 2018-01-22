@@ -5,12 +5,14 @@ import java.util.Map;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -27,12 +29,11 @@ import org.springside.examples.quickstart.service.task.TaskService;
 import org.springside.modules.utils.Clock;
 import org.springside.modules.web.Servlets;
 import org.springside.examples.quickstart.service.customer.CustomerService;
-<<<<<<< HEAD
+
 import org.springside.examples.quickstart.entity.Customer;
 import org.springside.examples.quickstart.repository.CustomerDao;
 import org.springside.examples.quickstart.service.customer.CustomerService;
-=======
->>>>>>> 89c2eeaf870b152702d05bd9a72f33775cd458f0
+
 
 import com.google.common.collect.Maps;
 
@@ -69,7 +70,6 @@ public class CustomerController {
 
 		return "customer/customerList";
 	}
-<<<<<<< HEAD
 
 	@RequestMapping(value = "create", method = RequestMethod.GET)
 	public String createForm(Model model) {
@@ -78,15 +78,15 @@ public class CustomerController {
 		return "customer/customerForm";
 	}
 
-	@RequestMapping(value = "create", method = RequestMethod.POST)
-	public String create(@Valid Customer newCustomer, RedirectAttributes redirectAttributes) {
-		Customer customer = new Customer(getCurrentAddUser());
-		//newCustomer.setCustomer(customer);
-
-		customerService.saveCustomer(newCustomer);
-		redirectAttributes.addFlashAttribute("message", "创建受检者档案成功");
-		return "redirect:/customer/";
-	}
+//	@RequestMapping(value = "create", method = RequestMethod.POST)
+//	public String create(@Valid Customer newCustomer, RedirectAttributes redirectAttributes) {
+//		Customer customer = new Customer(getCurrentAddUser());
+//		//newCustomer.setCustomer(customer);
+//
+//		customerService.saveCustomer(newCustomer);
+//		redirectAttributes.addFlashAttribute("message", "创建受检者档案成功");
+//		return "redirect:/customer/";
+//	}
 
 	@RequestMapping(value = "update/{id}", method = RequestMethod.GET)
 	public String updateForm(@PathVariable("id") Long id, Model model) {
@@ -120,8 +120,6 @@ public class CustomerController {
 		}
 	}
 
-=======
->>>>>>> 89c2eeaf870b152702d05bd9a72f33775cd458f0
 	/**
 	 * 取出Shiro中的当前用户Id.
 	 */

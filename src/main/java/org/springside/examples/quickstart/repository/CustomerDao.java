@@ -14,8 +14,8 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface CustomerDao extends PagingAndSortingRepository<Customer, Long>,JpaSpecificationExecutor<Task>{
 	//Customer findByAdduser(String adduser);
-	Page<Customer> findByUserId(Long id, Pageable pageRequest);
-	@Modifying
-	@Query("delete from Customer customer where customer.id=?1")
-	void deleteByUserId(Long id);
+	List<Customer> findByUserId(Long id, Pageable pageRequest);
+//	@Modifying
+//	@Query("delete from Customer p where p.id=?1")
+//	void deleteByUserId(Long id);
 }

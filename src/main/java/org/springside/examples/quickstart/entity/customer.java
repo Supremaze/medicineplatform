@@ -46,12 +46,12 @@ public class Customer extends IdEntity {
 	private int status;
 	private String jhr;//监护人
 	private String birth;
-<<<<<<< HEAD
+
 	//private Date registerDate;
-=======
+
 	private Date registerDate;
 	private Member member;
->>>>>>> 89c2eeaf870b152702d05bd9a72f33775cd458f0
+
 	public Customer() {
 	}
 	public Customer(Long id) {
@@ -210,15 +210,7 @@ public class Customer extends IdEntity {
 		this.birth = birth;
 	}
 	// 设定JSON序列化时的日期格式
-<<<<<<< HEAD
-//	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+08:00")
-//	public Date getRegisterDate() {
-//		return registerDate;
-//	}
-//	public void setRegisterDate(Date registerDate) {
-//		this.registerDate = registerDate;
-//	}
-=======
+
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+08:00")
 	public Date getRegisterDate() {
 		return registerDate;
@@ -238,7 +230,7 @@ public class Customer extends IdEntity {
 		this.member = member;
 	}
 
->>>>>>> 89c2eeaf870b152702d05bd9a72f33775cd458f0
+
 	@Override
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this);
