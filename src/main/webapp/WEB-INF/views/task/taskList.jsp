@@ -48,7 +48,7 @@ z<%@ page contentType="text/html;charset=UTF-8"%>
 			</c:forEach>
 		</tbody>
 	</table>
-
+<a href="${ctx}/customer">test</a>
 	<tags:pagination page="${tasks}" paginationSize="5" />
 	</div>
 </body>

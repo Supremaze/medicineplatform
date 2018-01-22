@@ -1,44 +1,41 @@
 package org.springside.examples.quickstart.web.customer;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.ServletRequest;
-import javax.validation.Valid;
+import javax.servlet.http.HttpServletRequest;
 
 import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springside.examples.quickstart.entity.Customer;
+import org.springside.examples.quickstart.entity.Record;
+import org.springside.examples.quickstart.entity.RecordsResult;
 import org.springside.examples.quickstart.entity.Task;
-import org.springside.examples.quickstart.entity.User;
 import org.springside.examples.quickstart.service.account.ShiroDbRealm.ShiroUser;
+import org.springside.examples.quickstart.service.record.RecordService;
+import org.springside.examples.quickstart.service.record.RecordsResultService;
 import org.springside.examples.quickstart.service.task.TaskService;
+import org.springside.modules.utils.Clock;
 import org.springside.modules.web.Servlets;
 import org.springside.examples.quickstart.service.customer.CustomerService;
+<<<<<<< HEAD
 import org.springside.examples.quickstart.entity.Customer;
 import org.springside.examples.quickstart.repository.CustomerDao;
 import org.springside.examples.quickstart.service.customer.CustomerService;
+=======
+>>>>>>> 89c2eeaf870b152702d05bd9a72f33775cd458f0
 
 import com.google.common.collect.Maps;
 
-/**
- * Task管理的Controller, 使用Restful风格的Urls:
- * 
- * List page : GET /customer/
- * Create page : GET /customer/create
- * Create action : POST /customer/create
- * Update page : GET /customer/update/{id}
- * Update action : POST /customer/update
- * Delete action : GET /customer/delete/{id}
- * 
- */
 @Controller
 @RequestMapping(value = "/customer")//类中的所有响应请求的方法都是以该地址作为父路径
 public class CustomerController {
@@ -60,7 +57,7 @@ public class CustomerController {
 			@RequestParam(value = "sortType", defaultValue = "auto") String sortType, Model model,
 			ServletRequest request) {
 		Map<String, Object> searchParams = Servlets.getParametersStartingWith(request, "search_");
-		Long userId = getCurrentAddUser();
+		Long userId = getCurrentUserId();
 
 		Page<Customer> customers = customerService.getCustomer(userId, searchParams, pageNumber, pageSize, sortType);
 
@@ -72,6 +69,7 @@ public class CustomerController {
 
 		return "customer/customerList";
 	}
+<<<<<<< HEAD
 
 	@RequestMapping(value = "create", method = RequestMethod.GET)
 	public String createForm(Model model) {
@@ -122,11 +120,14 @@ public class CustomerController {
 		}
 	}
 
+=======
+>>>>>>> 89c2eeaf870b152702d05bd9a72f33775cd458f0
 	/**
 	 * 取出Shiro中的当前用户Id.
 	 */
-	private Long getCurrentAddUser() {
+	private Long getCurrentUserId() {
 		ShiroUser user = (ShiroUser) SecurityUtils.getSubject().getPrincipal();
-		return user.id;
+		return user.getUid();
 	}
+
 }

@@ -18,6 +18,8 @@ import org.springside.examples.quickstart.repository.TaskDao;
 import org.springside.modules.persistence.DynamicSpecifications;
 import org.springside.modules.persistence.SearchFilter;
 import org.springside.modules.persistence.SearchFilter.Operator;
+import org.springside.examples.quickstart.repository.CustomerDao;
+
 
 //Spring Bean的标识.
 @Component
@@ -39,10 +41,10 @@ public class CustomerService {
 	public List<Customer> getAllCustomer() {
 		return (List<Customer>) customerDao.findAll();
 	}
-	public Page<Customer> getCustomer(Long adduser, Map<String, Object> searchParams, int pageNumber, int pageSize,
+	public Page<Customer> getCustomer(Long memberId, Map<String, Object> searchParams, int pageNumber, int pageSize,
 			String sortType) {
 		PageRequest pageRequest = buildPageRequest(pageNumber, pageSize, sortType);
-		Specification<Customer> spec = buildSpecification(adduser, searchParams);
+		Specification<Customer> spec = buildSpecification(memberId, searchParams);
 
 		return customerDao.findAll(pageRequest);
 	}

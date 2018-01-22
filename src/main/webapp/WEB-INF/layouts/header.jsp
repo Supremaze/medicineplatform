@@ -51,8 +51,8 @@
 				<li><a href="${ctx}/healthReport" onClick="getclassname(this)" class="link_onclick">
 						<i class="icon-table"></i>&nbsp;&nbsp;健康报告管理
 				</a></li>
-				<li><a href="${ctx}/importSurvey" onClick="getclassname(this)" class="link_onclick">
-						<i class="icon-table"></i>&nbsp;&nbsp;健康调查表格
+				<li><a href="${ctx}/customer" onClick="getclassname(this)" class="link_onclick">
+						<i class="icon-table"></i>&nbsp;&nbsp;受检者档案管理
 				</a></li>
 				<li><a href="${ctx}/doctor" onClick="getclassname(this)" class="link_onclick"> <i
 						class="icon-tasks"></i>&nbsp;&nbsp;医生管理

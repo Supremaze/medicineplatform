@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="tags" tagdir="/WEB-INF/tags"%>
@@ -6,7 +5,7 @@
 
 <html>
 <head>
-<title>受检者管理</title>
+<title>任务管理</title>
 </head>
 
 <body>
@@ -36,19 +35,25 @@
 		<thead>
 			<tr>
 				<th>任务</th>
-				<th>管理</th>
+				<th>性别</th>
+				<th>姓名</th>
+				<th>地址</th>
+				<th>添加者</th>
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach items="${tasks.content}" var="task">
+			<c:forEach items="${customers.content}" var="customer">
 				<tr>
 					<td><a href="${ctx}/task/update/${task.id}">${task.title}</a></td>
+					<td><a href="${ctx}/task/delete/${task.id}">删除</a></td>
+					<td><a href="${ctx}/task/update/${task.id}">${customer.realname}</a></td>
+					<td><a href="${ctx}/task/delete/${task.id}">删除</a></td>
 					<td><a href="${ctx}/task/delete/${task.id}">删除</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
-
+<a href="${ctx}/customer/test">test</a>
 	<tags:pagination page="${tasks}" paginationSize="5" />
 	</div>
 </body>
